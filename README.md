@@ -2,7 +2,7 @@
 
 file name: kucoinutc-csv.py  
 note: uses Kucoin exchange API  
-usage example command line: **python3 kucoin-csv.py BTC-USD ETH-USD**       
+usage example command line: **python3 kucoin-csv.py BTC-USDT ETH-USDT**       
 add as many pairs as needed or change interval inside the script   
 
 file name: ftx01utc-csv.py  
