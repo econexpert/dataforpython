@@ -5,9 +5,11 @@ note: uses Kucoin exchange API
 usage example command line: **python3 kucoinutccsv.py BTC-USDT ETH-USDT**       
 add as many pairs as needed or change interval inside the script   
 
-If running on public notebook, place either one of these lines in top of script:     
-sys.argv = ("anything","BTC-USDT","ETH-USDT")    
-%%python3 kucoinutccsv.py BTC-USDT ETH-USDT
+If running on public notebook, place either one of these lines in top of script:    
+in Kaggle:     
+sys.argv = ("anything","BTC-USDT","ETH-USDT")        
+in Datalore:    
+%%python3 kucoinutccsv.py BTC-USDT ETH-USDT    
 
 file name: ftx01utc-csv.py  
 note: uses FTX exchange API  (discontinued)   
