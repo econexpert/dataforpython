@@ -1,5 +1,13 @@
 # API crypto data saver csv in python
 
+file nane:krakenutc-csv.py    
+note: uses Kraken exchange API   
+usage example command line: **python3 krakenutccsv.py BTCUSD ETHUSD**         
+add as many pairs as needed or change interval inside the script     
+
+It is better to run each scirpt in deperate directory   
+
+
 file name: kucoinutc-csv.py  
 note: uses Kucoin exchange API  
 usage example command line: **python3 kucoinutccsv.py BTC-USDT ETH-USDT**       
