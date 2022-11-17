@@ -5,7 +5,7 @@ note: uses Kraken exchange API
 usage example command line: **python3 krakenutccsv.py BTCUSD ETHUSD**         
 add as many pairs as needed or change interval inside the script     
 
-It is better to run each scirpt in deperate directory   
+It is better to run each scirpt in seperate directory   
 
 
 file name: kucoinutc-csv.py  
