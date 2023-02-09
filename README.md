@@ -28,7 +28,11 @@ add as many pairs as needed or change interval inside the script
 
 ![](https://github.com/econexpert/dataforpython/blob/main/images/coinpricecsvsaver.jpg)
 
+## file name: detectoutliersallcsv.py
 
+This file checks saved csv in working directory for outliers and for break in time sequence. 
+
+Use together with other file to monitor API saving performance. 
 
 # csv data for python
 csv files to use in python apps. Updated only occasionally
