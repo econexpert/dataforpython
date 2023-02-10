@@ -46,32 +46,28 @@ def sliding_window_outliers(array, window_size):  # this funtion from ChatGPT
         outliers.extend(oneoutlier)
     return outliers, breaks
 
-def main(runoncenopromts = False):
+def main():
     numberofrowstoget = 13500
     windowtoanalyze = 50
-    print(">> ",(("run forver","run once and quit")[runoncenopromts == True])," <<")
     listofcollections = []
     listofcollections = getsavedcsvfiles()    # get list of csv files in the working directory
     if len(listofcollections) == 0:
         print("CSV files not found")
         return
     n = 0
-    while True:   # forever loop
-        for api_symbol in listofcollections:
-            print("accessing coin: ", '\033[1;34m', api_symbol, '\033[0;0m')
-            filename = api_symbol + ".csv"  # create a filename
-            array = np.array(getrows(filename, numberofrowstoget))
-            unixtimepricerow = np.array(array[:,[0,2]], dtype = float)
+    for api_symbol in listofcollections:
+        print("accessing coin: ", '\033[1;34m', api_symbol, '\033[0;0m')
+        filename = api_symbol + ".csv"  # create a filename
+        array = np.array(getrows(filename, numberofrowstoget))
+        unixtimepricerow = np.array(array[:,[0,2]], dtype = float)
 
-            outliers, breaks = sliding_window_outliers(unixtimepricerow, windowtoanalyze)  
-            for i in outliers:
-                print("outlier at:", datetime.datetime.utcfromtimestamp(int(i[0])),"price:", i[1])  # print outliers
-            for i in breaks:
-                print("break in series:", '\033[1;31m',i, '\033[0;0m',"at:" ,datetime.datetime.utcfromtimestamp(i))
-            n += 1
-            print("round: ",n,". Press Ctrl-C to exit." ,sep="")
-        if runoncenopromts:
-            break
+        outliers, breaks = sliding_window_outliers(unixtimepricerow, windowtoanalyze)  
+        for i in outliers:
+            print("outlier at:", datetime.datetime.utcfromtimestamp(int(i[0])),"price:", i[1])  # print outliers
+        for i in breaks:
+            print("break in series:", '\033[1;31m',i, '\033[0;0m',"at:" ,datetime.datetime.utcfromtimestamp(i))
+        n += 1
+        print("round: ",n,". Press Ctrl-C to exit." ,sep="")
 
 if __name__ == "__main__":
-    main(runoncenopromts=True)   # set value True if running only once and quit, good for scheduling; False if to make this script to run forever loop 
+    main()   
