@@ -28,7 +28,10 @@ def detectbreakinsequence(array):
 def sliding_window_outliers(array, window_size):  # this funtion from ChatGPT
     breaks = []
     if detectbreakinsequence(array):  # detect if there is any break in time sequence
-        breaks.append((int(array[0,0]), int(array[-1,0])))
+        arrayofdiff = np.diff(array[:,0].astype(int)) # start loop to find breaks in time series
+        for i in range(len(arrayofdiff)-1):
+            if arrayofdiff[i] != arrayofdiff[i+1]:
+                breaks.append(int(array[i+1,0]))
     outliers = []
     for i in range(len(array) - window_size + 1):
         oneoutlier = []
@@ -44,7 +47,7 @@ def sliding_window_outliers(array, window_size):  # this funtion from ChatGPT
     return outliers, breaks
 
 def main(runoncenopromts = False):
-    numberofrowstoget = 3500
+    numberofrowstoget = 13500
     windowtoanalyze = 50
     print(">> ",(("run forver","run once and quit")[runoncenopromts == True])," <<")
     listofcollections = []
@@ -62,9 +65,9 @@ def main(runoncenopromts = False):
 
             outliers, breaks = sliding_window_outliers(unixtimepricerow, windowtoanalyze)  
             for i in outliers:
-                print(datetime.datetime.fromtimestamp(int(i[0])),i[1])  # print outliers
+                print("outlier at:", datetime.datetime.utcfromtimestamp(int(i[0])),"price:", i[1])  # print outliers
             for i in breaks:
-                print("break in series between", '\033[1;31m',i[0], i[1], '\033[0;0m',"from:" ,datetime.datetime.fromtimestamp(i[0]), "to:", datetime.datetime.fromtimestamp(i[1]))
+                print("break in series:", '\033[1;31m',i, '\033[0;0m',"at:" ,datetime.datetime.utcfromtimestamp(i))
             n += 1
             print("round: ",n,". Press Ctrl-C to exit." ,sep="")
         if runoncenopromts:
