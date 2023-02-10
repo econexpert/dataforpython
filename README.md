@@ -32,7 +32,11 @@ add as many pairs as needed or change interval inside the script
 
 This file checks saved csv in working directory for outliers and for break in time sequence. 
 
-Use together with other file to monitor API saving performance. 
+Usage example command line in directory contaning csv files: python3 detectoutliersallcsv.py
+
+Use together with other files to monitor API saving performance. 
+
+![](https://github.com/econexpert/dataforpython/blob/main/images/breakinseries.jpg)
 
 # csv data for python
 csv files to use in python apps. Updated only occasionally
