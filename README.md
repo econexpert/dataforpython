@@ -50,5 +50,19 @@ Use together with other files to monitor API saving performance.
 
 ![](https://github.com/econexpert/dataforpython/blob/main/images/breakinseries.jpg)
 
-# csv data for python
-csv files to use in python apps. Updated only occasionally
+# Suggested use in public notebook service
+
+Create empty python notebook and paste following content. Then upload files to the same folder:
+
+```
+import importlib, sys
+sys.argv = ("anything","BTC-USDT","ETH-USDT") # Change or add other coins
+importlib.import_module("kucoinutccsv", sys.argv[1]).main(True)  # True - run once and quit
+
+sys.argv = ("anything","ADAUSD","MANAUSD","DOTUSD")  # Change or add other coins
+importlib.import_module("krakenutc-csv", sys.argv[1]).main(True)  # True - run once and quit
+
+print("all done")
+```
+
+Tested on Datalore. 
