@@ -66,3 +66,7 @@ print("all done")
 ```
 
 Tested on Datalore. 
+
+Updates always on my Twitter: 
+
+[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/bukotsunikki.svg?style=social&label=Follow%20%40econexpert)](https://twitter.com/econexpert)
