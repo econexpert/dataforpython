@@ -1,5 +1,18 @@
 # API crypto data saver csv in python
 
+## bybitutc-csv.py
+
+note: uses **Bybit** exchange API   
+usage example command line: 
+```
+python3 bybituts-csv.py BTCUSDT ETHUSDT       
+```
+add as many pairs as needed or change interval inside the script     
+
+It is better to run each scirpt in seperate directory   
+
+
+
 ## krakenutc-csv.py    
 note: uses **Kraken** exchange API   
 usage example command line: 
