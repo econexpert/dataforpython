@@ -52,7 +52,7 @@ add as many pairs as needed or change interval inside the script
 
 ## detectoutliersallcsv.py
 
-This file checks saved csv in working directory for outliers and for break in time sequence. 
+This program analyzes CSV files containing time series data, detect outliers within sliding windows, and identify breaks in the time series sequence. For analysis it uses all csv files in working directory.
 
 Usage example command line in directory contaning csv files: 
 ```
