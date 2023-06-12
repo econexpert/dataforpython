@@ -13,6 +13,10 @@ It is better to run each scirpt in seperate directory
 
 
 
+https://github.com/econexpert/dataforpython/assets/7473991/d539dc06-9bb8-4078-b3e8-e3cc1290fa0f
+
+
+
 ## krakenutc-csv.py    
 note: uses **Kraken** exchange API   
 usage example command line: 
