@@ -67,6 +67,11 @@ Use together with other files to monitor API saving performance.
 
 ![](https://github.com/econexpert/dataforpython/blob/main/images/breakinseries.jpg)
 
+Here is video demonstration how this script works: 
+
+https://github.com/econexpert/dataforpython/assets/7473991/c99e13a6-d304-48ff-a0b6-810d345f248f
+
+
 # Suggested use in public notebook service
 
 Create empty python notebook and paste following content. Then upload files to the same folder:
